@@ -13,11 +13,11 @@ from .forms import ImageUploadForm
 def delete_file_after_one_hour(file_path):
     def delete_file():
         if os.path.exists(file_path):
-            time.sleep(20)
+            time.sleep(900)
             os.remove(file_path)
             print(f"{file_path} has been deleted.")
 
-    timer = threading.Timer(20, delete_file)
+    timer = threading.Timer(900, delete_file)
     timer.start()
 
 
